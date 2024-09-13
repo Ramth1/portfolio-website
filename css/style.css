@@ -1,9 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f4f4f4;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
@@ -37,14 +37,181 @@ header nav a:hover {
     padding: 50px 20px;
     text-align: center;
     position: relative; /* Ensures the image animation is relative to this section */
+    overflow: hidden; /* Prevents meteors from appearing outside the section */
 }
 
+/* Meteor Animation */
+#about::before,
+#about::after,
+#about .meteor1,
+#about .meteor2,
+#about .meteor3 {
+    content: '';
+    position: absolute;
+    width: 2px; /* Thin meteor */
+    height: 80px; /* Length of meteor */
+    background-color: rgba(255, 255, 255, 0.8); /* White color with slight transparency */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Glow effect */
+    z-index: 1; /* Position behind text and content */
+}
+
+/* Meteor 1 */
+#about::before {
+    top: -50px; /* Start off-screen */
+    left: -100px; /* Start off-screen */
+    animation: meteor 5s linear infinite; /* Infinite looping animation */
+}
+
+/* Meteor 2 */
+#about::after {
+    top: -80px; /* Different starting point */
+    left: -150px; /* Different starting point */
+    height: 100px;
+    animation: meteor 7s linear infinite;
+    animation-delay: 2s; /* Delay for the second meteor */
+}
+
+/* Meteor 3 */
+#about .meteor1 {
+    top: -30px; /* Different starting point */
+    left: -200px; /* Different starting point */
+    height: 70px;
+    animation: meteor 6s linear infinite;
+    animation-delay: 4s; /* Delay for the third meteor */
+}
+
+/* Meteor 4 */
+#about .meteor2 {
+    top: -100px; /* Different starting point */
+    left: -250px; /* Different starting point */
+    height: 90px;
+    animation: meteor 8s linear infinite;
+    animation-delay: 6s; /* Delay for the fourth meteor */
+}
+
+/* Meteor 5 */
+#about .meteor3 {
+    top: -120px; /* Different starting point */
+    left: -300px; /* Different starting point */
+    height: 80px;
+    animation: meteor 5s linear infinite;
+    animation-delay: 8s; /* Delay for the fifth meteor */
+}
+
+/* Keyframes for Meteor Animation */
+@keyframes meteor {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg); /* Initial position */
+        opacity: 1; /* Fully visible */
+    }
+    70% {
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translateX(600px) translateY(400px) rotate(45deg); /* Move diagonally downwards */
+        opacity: 0; /* Fades out */
+    }
+}
+
+/* Profile Picture */
 .profile-picture {
     border-radius: 50%;
     width: 150px;
     height: 150px;
     animation: upDown 3s ease-in-out infinite; /* Smooth up-and-down animation */
+    z-index: 2; /* Ensure the profile picture is on top of meteors */
 }
+
+/* Meteor Shower Background */
+.meteor-background {
+    position: relative;
+    overflow: hidden; /* Prevent meteors from appearing outside the section */
+}
+
+/* Meteor Animation */
+.meteor-background::before,
+.meteor-background::after,
+.meteor-background .meteor1,
+.meteor-background .meteor2,
+.meteor-background .meteor3 {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+/* Meteor 1 */
+.meteor-background::before {
+    top: -50px;
+    left: -100px;
+    animation: meteor 5s linear infinite;
+}
+
+/* Meteor 2 */
+.meteor-background::after {
+    top: -80px;
+    left: -150px;
+    height: 100px;
+    animation: meteor 7s linear infinite;
+    animation-delay: 2s;
+}
+
+/* Meteor 3 */
+.meteor-background .meteor1 {
+    top: -30px;
+    left: -200px;
+    height: 70px;
+    animation: meteor 6s linear infinite;
+    animation-delay: 4s;
+}
+
+/* Meteor 4 */
+.meteor-background .meteor2 {
+    top: -100px;
+    left: -250px;
+    height: 90px;
+    animation: meteor 8s linear infinite;
+    animation-delay: 6s;
+}
+
+/* Meteor 5 */
+.meteor-background .meteor3 {
+    top: -120px;
+    left: -300px;
+    height: 80px;
+    animation: meteor 5s linear infinite;
+    animation-delay: 8s;
+}
+
+/* Keyframes for Meteor Animation */
+@keyframes meteor {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(600px) translateY(400px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Adjust the section content to be above the meteors */
+#skills h2,
+#contact h2,
+#skills p,
+#contact p,
+.skills-container,
+.contact-container {
+    position: relative;
+    z-index: 2;
+}
+
 
 /* Keyframes for Up-and-Down Animation */
 @keyframes upDown {
