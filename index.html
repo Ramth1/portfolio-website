@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Thapa Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="theme-toggle-container"></div>
+            <label class="theme-toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+    
+    <section id="about">
+        <span class="typing-effect">
+            <h1>
+                <span class="typing-word">Hi,</span>
+                <span class="typing-word">I'm</span>
+                <span class="typing-word">Ram</span>
+                <span class="typing-word">Thapa.</span>
+                <span class="typing-word">I'm</span>
+                <span class="typing-word">a</span>
+                <span class="typing-word">Full</span>
+                <span class="typing-word">Stack</span>
+                <span class="typing-word">Developer</span>
+            </h1>
+        </span>
+        <div>
+            <img src="images/dv-modified.png" alt="Profile Picture" class="profile-picture">
+        </div>
+        <div>
+            <p class="animated-text">
+                <span class="word">Welcome</span>
+                <span class="word">to</span>
+                <span class="word">my</span>
+                <span class="word">portfolio</span>
+                <span class="word">website!</span>
+            </p>
+        </div>        
+        <a href="cv.pdf" class="btn" download>Download Resume</a>
+
+    </section>
+    
+    
+    
+
+    <section id="projects">
+        <h2 id="project">Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project">
+                <img src="images/e.jpg" alt="Project 1" class="project-image">
+                <div class="project-info">
+                    <h3>Ecommerce Website</h3>
+                    <p>A brief description of the project goes here. Explain the purpose, technology stack used, and any unique features.</p>
+                    <div class="project-buttons">
+                        <a href="https://link-to-live-project.com" class="btn" target="_blank">View Project</a>
+                        <a href="https://github.com/Ramth1/api-31" class="btn" target="_blank">View Code</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Project 2 -->
+            <div class="project">
+                <img src="images/q.png" alt="Project 2" class="project-image">
+                <div class="project-info">
+                    <h3>Quote Generator</h3>
+                    <p>Created a simple Quote generator which has two category along with switch to dark/light toggle button and it has been hosted in netifly as well.</p>
+                    <div class="project-buttons">
+                        <a href="https://master--quote-generator79.netlify.app/" class="btn" target="_blank">View Project</a>
+                        <a href="https://github.com/Ramth1/quote-generator" class="btn" target="_blank">View Code</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+    
+    
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="images/th.jpeg" alt="REACT" class="skill-icon">
+                <h3>React js</h3>
+            </div>
+            <div class="skill">
+                <img src="images/R.png" alt="JS" class="skill-icon">
+                <h3>JS</h3>
+            </div>
+            <div class="skill">
+                <img src="images/node.png" alt="MERN" class="skill-icon">
+                <h3>Node js with Express</h3>
+            </div>
+            <div class="skill">
+                <img src="images/node.png" alt="MERN" class="skill-icon">
+                <h3>Node js with Express</h3>
+            </div>
+            <div class="skill">
+                <img src="images/node.png" alt="MERN" class="skill-icon">
+                <h3>Node js with Express</h3>
+            </div>
+            <div class="skill">
+                <img src="images/node.png" alt="MERN" class="skill-icon">
+                <h3>Node js with Express</h3>
+            </div>
+            <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or want to collaborate, feel free to reach out to me!</p>
+        <div class="contact-container">
+            <form action="https://formspree.io/f/{your-email}" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://github.com/Ramth1" target="_blank"><img src="images/git1.png" alt="GitHub">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="images/link1.png" alt="LinkedIn">LinkedIn</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ram Dhapao. All rights reserved.</p>
+    </footer>
+
+    <script>
+    // JavaScript to handle theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.checked = true;
+    }
+
+    themeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Store the theme preference
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+    </script>
+</body>
+</html>
